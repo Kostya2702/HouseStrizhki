@@ -1,0 +1,52 @@
+{% load static %}
+
+<!doctype html>
+<html lang='ru'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+</head>
+
+<body>
+  
+  <header class="p-3 d-flex text-black">
+    <div class="indent">
+      <div>
+        <img src="{% static 'mainapp/img/logo.svg' %}" alt="Logo">
+        <span class="logo">Уютнее чем дома</span> 
+      </div>
+      <ul class="nav me-lg-auto link-box">
+        <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+        <a href="{% url 'about' %}"><li><i class="far fa-address-card"></i> О нас</li></a>
+        <a href="{% url 'create' %}"><li><i class="fas fa-book-open"></i> Онлайн запись</li></a>
+      </ul>
+    </div>
+  </header>
+    <!-- <div class="one-level-img">
+      <p>
+        <img src="{% static 'mainapp/img/Dan_Tim.jpg' %}" alt="1" width="600" height="800">
+        <img src="{% static 'mainapp/img/Dan.jpg' %}" alt="2" width="600" height="800">
+      </p>
+    </div> -->
+    
+  <main class="main-content indent">
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <div class="bot-info">
+    <div class="style-h1-info style-h1">Подпишись на нас в соцсетях</div>
+    <a class="style-vk ikon-position" href="https://vk.com/papa_strizhki"></a>
+    <a class="style-inst ikon-position" href="https://www.instagram.com/papa_strizhki/"></a>
+  </div>
+  
+  
+</body>
+</html>

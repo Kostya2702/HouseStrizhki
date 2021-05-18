@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <div class="notesBox">
+        {% for el in opisanie %}
+        <div class="notes">
+                <h1 class="style-h1">Несколько слов о лучшей в мире парикмахерской</h1>
+                <span>{{ el.noteAbout }}</span>
+            </div>
+        {% endfor %}
+    </div>
+    <div>
+        <h1 class="style-h1">Наши услуги</h1>
+        {% if tasks != 0 %}
+            {% for el in tasks %}
+                <div class="alert alert-warning mt-2">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.service }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+                <p>Нужно заполнить все поля</p>
+        {% endif %}
+    </div>
+{% endblock %}
+

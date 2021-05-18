@@ -1,0 +1,16 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+Онлайн запись
+{% endblock %}
+
+{% block content %}
+    <h1>Онлайн запись</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.service }}<br>
+        <button type="submit" class="btn btn-warning">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
