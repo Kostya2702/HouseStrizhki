@@ -17,13 +17,13 @@ class ServicesForm(ModelForm):
             
         }
 
-class AboutUsForm(ModelForm):
-    class Meta:
-        model = About
-        fields = ["noteAbout"]
-        widgets = {
-            "noteAbout": TextInput(attrs={
-                "class": "form-control",
-                'placeholder': "Начни писать"
-            })
-        }
+# class AboutUsForm(ModelForm):
+#     class Meta:
+#         model = About
+#         fields = ["noteAbout"]
+#         widgets = {
+#             "noteAbout": TextInput(attrs={
+#                 "class": "form-control",
+#                 'placeholder': "Начни писать"
+#             })
+#         }

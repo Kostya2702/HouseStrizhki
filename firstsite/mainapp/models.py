@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.base import Model
 
 class Services(models.Model):
     title = models.CharField('Название', max_length=50)
@@ -13,11 +14,24 @@ class Services(models.Model):
 
 
 class About(models.Model):
+    titleAbout = models.CharField('Заголовок', max_length=50)
     noteAbout = models.TextField('Напиши о вас и вашей парикмахерской')
 
     def __str__(self):
-        return self.noteAbout
+        return self.titleAbout
     
     class Meta:
         verbose_name = 'О парикмахерской'
         verbose_name_plural = 'О парикмахерской'
+
+
+class Atmosfere(models.Model):
+    photo = models.ImageField('Добвить фото')
+    podpis = models.CharField('Придумай подпись к фото', max_length=90)
+
+    def __str__(self):
+        return self.photo
+
+    class Meta:
+        verbose_name = 'Атмосфера'
+        verbose_name_plural = 'Атмосфера'

@@ -8,7 +8,7 @@
     <div class="notesBox">
         {% for el in opisanie %}
         <div class="notes">
-                <h1 class="style-h1">Несколько слов о лучшей в мире парикмахерской</h1>
+                <h1 class="style-h1">{{ el.titleAbout }}</h1>
                 <span>{{ el.noteAbout }}</span>
             </div>
         {% endfor %}
@@ -25,6 +25,15 @@
         {% else %}
                 <p>Нужно заполнить все поля</p>
         {% endif %}
+    </div>
+    <div class="samp-work">
+        <h1 class="style-h1 style-h1-info">Работы</h1>
+        {% for el in add_photo %}
+            <div>
+                <div>{{ el.photo }}</div>
+                <span>{{ el.podpis }}</span>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}
 
