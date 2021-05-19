@@ -85,6 +85,7 @@ header ul li:hover, header ul a:hover{
 
 /* Стиль шрифта о сайте */
 .notes {
+    letter-spacing: 0.05em;
     padding: 40px 40px 40px;
     position: relative;
 }
@@ -119,10 +120,18 @@ header ul li:hover, header ul a:hover{
     position: relative;
 }
 
+
+.samp-work {
+    background-color: black;
+    position: relative;
+    width: 100%;
+    margin: 50px 0px 50px 0px;
+}
+
 .bot-info {
+    background: repeating-linear-gradient(-45deg, rgba(128, 0, 128, 0.7), rgba(128, 0, 128, 0.7) 15px, rgba(29, 159, 127, 0.7) 15px, rgba(29, 159, 127, 0.7) 30px);
     text-align: center;
     padding: 30px;
-    background-color: black;
     position: relative;
 }
 
