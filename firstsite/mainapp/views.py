@@ -1,14 +1,22 @@
 from django.shortcuts import render, redirect
-from .models import Atmosfere, Services
+from .models import Address, Atmosfere, Services
 from .forms import ServicesForm
 from .models import About
 
 
 def index(request):
+    numbers = Address.objects.all()
+    addresses = Address.objects.all()
     add_photo = Atmosfere.objects.all()
     opisanie = About.objects.all()
-    tasks = Services.objects.all()
-    return render(request, 'mainapp/index.html', {'title': 'HouseStrizhki', 'tasks': tasks, 'opisanie': opisanie, 'add_photo': add_photo})
+    prices = Services.objects.all()
+    return render(request, 'mainapp/index.html', {'title': 'HouseStrizhki', 
+                                                'prices': prices, 
+                                                'opisanie': opisanie, 
+                                                'add_photo': add_photo,
+                                                'addresses': addresses,
+                                                'numbers': numbers,
+                                                })
 
 def about(request):
     return render(request, 'mainapp/index.html')
