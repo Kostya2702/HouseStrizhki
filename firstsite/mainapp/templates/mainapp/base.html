@@ -8,42 +8,51 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
   
-  <header class="p-3 d-flex text-black">
-    <div class="indent">
-      <div>
-        <img src="{% static 'mainapp/img/logo.svg' %}" alt="Logo">
-        <span class="logo">Уютнее чем дома</span> 
+  <header class="header">
+    <div class="container">
+      <div class="header-in">
+        <div class="logo">
+          <img src="{% static 'mainapp/img/logo.svg' %}" alt="Logo" width="60px">Уютнее чем дома
+        </div>
+          <nav class="nav">
+            <a class="nav-link" href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
+            <a class="nav-link" href="{% url 'about' %}"><li><i class="far fa-address-card"></i> О нас</li></a>
+            <a class="nav-link nav-link-write" href="{% url 'create' %}"><li><i class="fas fa-book-open"></i> Онлайн запись</li></a>
+          </nav>
       </div>
-      <ul class="nav me-lg-auto link-box">
-        <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
-        <a href="{% url 'about' %}"><li><i class="far fa-address-card"></i> О нас</li></a>
-        <a href="{% url 'create' %}"><li><i class="fas fa-book-open"></i> Онлайн запись</li></a>
-      </ul>
     </div>
   </header>
-    <!-- <div class="one-level-img">
-      <p>
-        <img src="{% static 'mainapp/img/Dan_Tim.jpg' %}" alt="1" width="600" height="800">
-        <img src="{% static 'mainapp/img/Dan.jpg' %}" alt="2" width="600" height="800">
-      </p>
-    </div> -->
-    
-  <main class="main-content indent">
-    <div class="container">
-      {% block content %}{% endblock %}
-    </div>
-  </main>
 
-  <div class="samp-work">
-    <h1 class="style-h1 style-h1-info">Работы</h1>
+  <div class="intro">
+    <div class="container">
+      {% block intro %}{% endblock %}
+    </div>
   </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-us">
+        {% block about %}{% endblock %}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="price-section">
+        {% block price %}{% endblock %}
+      </div>
+    </div>
+  </section>
 
   <div class="bot-info">
     <div class="style-h1-info style-h1">Подпишись на нас в соцсетях</div>
