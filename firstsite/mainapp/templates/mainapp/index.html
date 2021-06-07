@@ -17,8 +17,10 @@
 
 {% block about %}
 
+
+        <h1 class="title-section">{{ titles.first }}</h1>
+
     {% for el in opisanie %}
-    <h1 class="title-section">{{ el.titleAbout }}</h1>
         <div> 
             <span class="text-about">{{ el.noteAbout }}</span>
         </div>
@@ -28,25 +30,27 @@
 
 
 {% block price %}
+    
+    <h1 class="title-section">{{ titles.last }}</h1>
 
     {% for el in prices %}
-        <h1 class="title-section">{{ titlePr }}</h1>
-            <div class="text-price">
-                <h3>{{ el.name }}</h3>
-                <h3>{{ el.price }}</h3>
-            </div>
+        <div class="text-price">
+            <h3>{{ el.name }}</h3>
+            <h3>{{ el.price }}</h3>
+        </div>
     {% endfor %}
     
 {% endblock %}
 
-    <div>
-        <h1>Работы</h1>
-        {% for el in add_photo %}
-            <div>
-                <div>{{ el.photo }}</div>
-                <span>{{ el.podpis }}</span>
-            </div>
-        {% endfor %}
-    </div>
+{% block atmosphere %}
+
+    <h1 class="title-section">Работы</h1>
+    {% for el in add_photo %}
+        <div class="ad-photo">
+            <div>{{ el.photo }}</div>
+        </div>
+    {% endfor %}
+
+{% endblock %}
 
 

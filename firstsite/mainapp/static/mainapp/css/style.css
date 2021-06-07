@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .title-section {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     padding-bottom: 10px;
     border-bottom: #FF0D0D 2px solid;
 }
@@ -153,11 +153,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* About */
 
-.section {
+.section-about {
+    background:#EBE5D2;
     height: 80vh;
     margin: 10vh auto;
-    background-color:#EBE5D2;
-    padding-top: 10vh;
+    padding-top: 30px;
 }
 
 .about-us {
@@ -169,15 +169,41 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .text-about {
-    font-size: 20px;
+    font-size: 25px;
     letter-spacing: 0.3em;
     line-height: 30px;
 }
 
 /* Price */
+.section-price {
+    background: #F6F6F6;
+    height: 80vh;
+    margin: 10vh auto;
+    padding-top: 30px;
+}
 
-.price-section {
+.price-service {
     text-align: center;
     display: block;
     justify-content: center;
 }
+
+.text-price {
+    font-size: 18px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0.15em;
+}
+
+/* Atmosphere */
+
+.section-atmosphere {
+    background: linear-gradient(45deg, #EECFBA, #C5DDE8);
+}
+
+.works-atmo {
+    text-align: center;
+}
+
+
