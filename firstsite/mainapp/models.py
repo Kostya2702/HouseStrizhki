@@ -1,9 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
-from django.db.models.fields import NullBooleanField
 
 class Services(models.Model):
-    titlePr = models.CharField('Заголовок', max_length=150)
     name = models.CharField('Название услуги', max_length=100)
     price = models.TextField('Цена')
 
@@ -15,12 +13,22 @@ class Services(models.Model):
         verbose_name_plural = 'Услуги'
 
 
+class Title_for_section(models.Model):
+    titleAboutAndPrice = models.CharField('Заголовок', default='По порядку два заголовка', max_length=150)
+
+    def __str__(self):
+        return self.titleAboutAndPrice
+
+    class Meta:
+        verbose_name = 'Заголовки'
+        verbose_name_plural = 'Заголовки'
+
+
 class About(models.Model):
-    titleAbout = models.CharField('Заголовок', max_length=50)
     noteAbout = models.TextField('Напиши о вас и вашей парикмахерской')
 
     def __str__(self):
-        return self.titleAbout
+        return self.noteAbout
     
     class Meta:
         verbose_name = 'О парикмахерской'
@@ -28,15 +36,14 @@ class About(models.Model):
 
 
 class Atmosfere(models.Model):
-    photo = models.ImageField('Добвить фото')
-    podpis = models.CharField('Придумай подпись к фото', max_length=90)
+    photo = models.ImageField(upload_to = 'img/')
 
     def __str__(self):
         return self.photo
 
     class Meta:
-        verbose_name = 'Атмосфера'
-        verbose_name_plural = 'Атмосфера'
+        verbose_name = 'Фоточки'
+        verbose_name_plural = 'Фото'
 
 
 class Address(models.Model):

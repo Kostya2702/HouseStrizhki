@@ -1,21 +1,21 @@
-from .models import About, Services
+from .models import About
 from django.forms import ModelForm, TextInput, Textarea
 
-class ServicesForm(ModelForm):
-    class Meta:
-        model = Services
-        fields = ["titlePr", "price"]
-        widgets = {
-            "titlePr": TextInput(attrs={
-                "class": "form-control",
-                'placeholder': "Введите название"
-            }),
-            "price": Textarea(attrs={
-                "class": "form-control",
-                'placeholder': "Введите описание"
-            }),
+# class ServicesForm(ModelForm):
+#     class Meta:
+#         model = Title_for_section
+#         fields = ["titlePrice", "price"]
+#         widgets = {
+#             "titlePrice": TextInput(attrs={
+#                 "class": "form-control",
+#                 'placeholder': "Введите название"
+#             }),
+#             "price": Textarea(attrs={
+#                 "class": "form-control",
+#                 'placeholder': "Введите описание"
+#             }),
             
-        }
+#         }
 
 # class AboutUsForm(ModelForm):
 #     class Meta:
