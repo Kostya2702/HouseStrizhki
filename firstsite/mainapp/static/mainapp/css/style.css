@@ -6,6 +6,9 @@ body {
     color: black;
     line-height: 1.5;
     
+    /* background: repeating-linear-gradient(135deg, #eecfba, #eecfba 20px, 
+                                                 #C5DDE8 20px, #C5DDE8 40px); */
+    
 }
 
 *, 
@@ -149,7 +152,16 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link-write:hover {
     background-color: #ff0d0d70;
 }
+.all-sections {
+    background: linear-gradient(45deg, #ecd8cb, #C5DDE8);
+    background-position: center;
+    background-attachment: fixed;
+    /* background-size: cover; */
 
+    height: 80vh;
+    margin: 10vh auto;
+    padding-top: 30px;
+}
 
 /* About */
 
@@ -199,6 +211,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Atmosphere */
 
 .section-atmosphere {
+    height: 80vh;
+    padding-top: 30px;
     background: linear-gradient(45deg, #EECFBA, #C5DDE8);
 }
 
@@ -206,4 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.ad-photo {
+
+}
 
