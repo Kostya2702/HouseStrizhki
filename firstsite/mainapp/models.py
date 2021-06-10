@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models.base import Model
+from django.utils.html import mark_safe
+from django.core.validators import FileExtensionValidator
 
 class Services(models.Model):
     name = models.CharField('Название услуги', max_length=100)
@@ -37,9 +39,17 @@ class About(models.Model):
 
 class Atmosfere(models.Model):
     photo = models.ImageField(upload_to = 'img/')
+    podpis = models.CharField('Подпись к фото', max_length=250)
+
+    def image_tag(self):
+        return mark_safe('<img src="/img/%s" width="150" height="150" />' % (self.photo))
+
+    image_tag.short_description = 'Image'
+
+    list_display = ['image_tag',]
 
     def __str__(self):
-        return self.photo
+        return self.podpis
 
     class Meta:
         verbose_name = 'Фоточки'
@@ -57,4 +67,11 @@ class Address(models.Model):
         verbose_name = 'Адрес и телефон'
         verbose_name_plural = 'Адреса и телефоны'
 
+
+class Maps(models.Model):
+    map = models.ImageField(upload_to = 'img/')
+
+    class Meta:
+        verbose_name = 'Как добраться'
+        verbose_name_plural = 'Как добраться'
 

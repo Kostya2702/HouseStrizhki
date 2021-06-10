@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Address, Atmosfere, Services, Title_for_section
+from .models import Address, Atmosfere, Services, Title_for_section, Maps
 from .models import About
 
 
@@ -10,6 +10,7 @@ def index(request):
     opisanie = About.objects.all()
     prices = Services.objects.all()
     titles = Title_for_section.objects.all()
+    maps = Maps.objects.all()
     return render(request, 'mainapp/index.html', {'title': 'HouseStrizhki', 
                                                 'prices': prices, 
                                                 'opisanie': opisanie, 
@@ -17,6 +18,7 @@ def index(request):
                                                 'addresses': addresses,
                                                 'numbers': numbers,
                                                 'titles': titles,
+                                                'maps': maps,
                                                 })
 
 def about(request):
