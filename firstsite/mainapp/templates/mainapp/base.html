@@ -11,9 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/css/hystmodal.min.css' %}">
+    <link rel="stylesheet" href="{% static 'mainapp/css/log.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <script src="http://code.jquery.com/jquery-3.6.0.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-</head>
+  </head>
 
 <body>
   
@@ -23,10 +26,10 @@
         <div class="logo">
           <img src="{% static 'mainapp/img/logo.svg' %}" alt="Logo" width="60px">Уютнее чем дома
         </div>
-          <nav class="nav">
+          <nav id="header" class="nav">
             <a class="nav-link" href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
-            <a class="nav-link" href="{% url 'about' %}"><li><i class="far fa-address-card"></i> О нас</li></a>
-            <a class="nav-link nav-link-write" href="{% url 'create' %}"><li><i class="fas fa-book-open"></i> Онлайн запись</li></a>
+            <a class="nav-link" href="#about"><li><i class="far fa-address-card"></i> О нас</li></a>
+            <a id="nav" class="nav-link nav-link-write" href="https://n10445.yclients.com/group:110/city:13#1"  data-hystmodal="#myModal"><i class="fas fa-book-open"></i> Онлайн запись</a>
           </nav>
       </div>
     </div>
@@ -38,7 +41,7 @@
     </div>
   </div>
 
-  <section class="all-sections">
+  <section id="about" class="all-sections">
     <div class="container">
       <div class="about-us">
         {% block about %}{% endblock %}
@@ -67,7 +70,30 @@
       {% block bottom %}{% endblock %}
     </div>
   </div>
-  
-  
-</body>
+
+  <div class="hystmodal hystmodal--simple" id="myModal" aria-hidden="true">
+    <div class="hystmodal__wrap">
+      <div class="hystmodal__window hystmodal__window--form" role="dialog" aria-modal="true">
+        <button class="hystmodal__close close-modal" data-hystclose="">Закрыть</button>
+        <div class="hystmodal__styled">
+          <div class="loginblock__h1">Modal form example</div>
+            <form action="#" method="POST">
+              {% block note %} {% endblock %}
+              <div class="formsubmit">
+                <button type="submit" class="button" onclick="alert('Форма работает'); return false;">Submit Form (example)</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div>
+
+  <script src="{% static 'mainapp/js/hystmodal.min.js' %}"></script>
+  <script src="{% static 'mainapp/js/highlight.pack.js' %}"></script>
+  <script src="{% static 'mainapp/js/main.js' %}"></script>
+  <script src="{% static 'mainapp/js/header.js' %}"></script>
+
+  <button class="hystmodal__shadow"></button>
+  </body>
 </html>

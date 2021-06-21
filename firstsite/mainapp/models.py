@@ -3,6 +3,7 @@ from django.db.models.base import Model
 from django.utils.html import mark_safe
 from django.core.validators import FileExtensionValidator
 
+
 class Services(models.Model):
     name = models.CharField('Название услуги', max_length=100)
     price = models.TextField('Цена')
@@ -15,15 +16,23 @@ class Services(models.Model):
         verbose_name_plural = 'Услуги'
 
 
-class Title_for_section(models.Model):
-    titleAboutAndPrice = models.CharField('Заголовок', default='По порядку два заголовка', max_length=150)
+class ChooceServ(models.Model):
+    choiceServ = models.ForeignKey(Services, on_delete=models.PROTECT, verbose_name='Выбор услуг')
+    choiceMaster = models.ForeignKey('Hairdressers', on_delete=models.PROTECT, verbose_name='Выбор мастера')
+
+
+class Hairdressers(models.Model):
+    hairdresser = models.CharField('Фамилия и имя', max_length=200)
+    master = models.CharField('Уровень мастерства', max_length=40)
+    aboutMaster = models.CharField('Немного о мастере', max_length=255)
+    avatar = models.ImageField('Добавить фото', upload_to = 'img/')
 
     def __str__(self):
-        return self.titleAboutAndPrice
+        return self.hairdresser
 
     class Meta:
-        verbose_name = 'Заголовки'
-        verbose_name_plural = 'Заголовки'
+        verbose_name = 'Парихмахер'
+        verbose_name_plural = 'Парихмахеры'
 
 
 class About(models.Model):
@@ -74,4 +83,6 @@ class Maps(models.Model):
     class Meta:
         verbose_name = 'Как добраться'
         verbose_name_plural = 'Как добраться'
+
+
 

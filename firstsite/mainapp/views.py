@@ -1,5 +1,6 @@
+from mainapp.forms import NoteForm
 from django.shortcuts import render
-from .models import Address, Atmosfere, Services, Title_for_section, Maps
+from .models import Address, Atmosfere, Services, Hairdressers, Maps
 from .models import About
 
 
@@ -9,16 +10,20 @@ def index(request):
     add_photo = Atmosfere.objects.all()
     opisanie = About.objects.all()
     prices = Services.objects.all()
-    titles = Title_for_section.objects.all()
+    masters = Hairdressers.objects.all()
     maps = Maps.objects.all()
+    notes = NoteForm()
+    # p_num = PhoneField() 
     return render(request, 'mainapp/index.html', {'title': 'HouseStrizhki', 
                                                 'prices': prices, 
                                                 'opisanie': opisanie, 
                                                 'add_photo': add_photo,
                                                 'addresses': addresses,
                                                 'numbers': numbers,
-                                                'titles': titles,
+                                                'masters': masters,
                                                 'maps': maps,
+                                                'notes': notes,
+                                                # 'p_num': p_num,
                                                 })
 
 def about(request):
