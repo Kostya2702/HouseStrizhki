@@ -5,8 +5,8 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: black;
     line-height: 1.5;
-    
-    /* background: repeating-linear-gradient(135deg, #eecfba, #eecfba 20px, 
+    /* background: repeating-radial-gradient(#88B693, #88B693 5px, #F7FAF1 5px, #F7FAF1 10px); */
+    /* background: repeating-linear-gradient(135deg, #88B693, #88B693 20px, 
                                                  #C5DDE8 20px, #C5DDE8 40px); */
     
 }
@@ -169,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     margin-right: 20px;
     margin-bottom: 20px;
+    z-index: 1002;
 }
 
 .nav-link-write:hover {
@@ -238,6 +239,7 @@ h3 {
 }
 
 .space-work {
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -245,17 +247,12 @@ h3 {
 
 .ad-photo {
     margin: 0 20px 20px 20px;
-    
-    max-width: 300px;
-    min-width: 200px;
     height: auto;
 }
 
 .photo-works {
     border-radius: 5px;
     text-align: center;
-
-    height: 100%;
     width: 100%;
 }
 
@@ -263,22 +260,137 @@ h3 {
     margin-bottom: 20px;
 }
 
+/* Carousel atmosphere */
+
+/* Ограничивающая оболочка */
+.slick-list {
+    overflow: hidden;
+}
+
+/* Лента слайдов */
+.slick-track{
+    display: flex;
+    align-items: center;
+}
+
+
+/* Точки (булиты) */
+.slick-dots{
+    display: flex;
+    padding: 0;
+}
+.slick-dots li{
+    list-style: none;
+    margin: 0 10px;
+}
+
+/* Активная точка */
+.slick-dots li.slick-active button{
+    border: none;
+    width: 14px;
+    height: 14px;
+}
+
+/* Элемент точки */
+.slick-dots li button{
+    border: none;
+    font-size: 0;
+    border-radius: 50%;
+    background-color: white;
+    width: 10px;
+    height: 10px;
+
+}
+
+/* Carousel works */
+
+
+
+.space-work {
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.space-work .slick-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 5;
+    font-size: 0;
+    width: 20px;
+    height: 45px;
+    border: none;
+    color: white;
+}
+
+.space-work .slick-arrow.slick-prev {
+    left: 0;
+    background: url('control_l.svg') 0 0 / 100% no-repeat;
+}
+
+.space-work .slick-arrow.slick-next {
+    right: 0;
+    background: url('control_r.svg') 0 0 / 100% no-repeat;
+}
+.space-work {
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+/* Для фокуса на центр */
+/* .ad-photo {
+    opacity: 0.5;
+}
+
+.ad-photo.slick-center {
+    opacity: 1;
+} */
+
+
+
+/*  */
+
+/* Carousel about master */
+.about-master .slick-arrow {
+    position: absolute;
+    top: 40%;
+    z-index: 5;
+    font-size: 0;
+    width: 20px;
+    height: 45px;
+    border: none;
+    color: white;
+}
+
+.about-master .slick-arrow.slick-prev {
+    left: 0;
+    background: url('control_l.svg') 0 0 / 100% no-repeat;
+}
+
+.about-master .slick-arrow.slick-next {
+    right: 0;
+    background: url('control_r.svg') 0 0 / 100% no-repeat;
+}
+
+/*  */
+
 /* Bottom */
 
 .p1 {
     color: white;
     font-size: 20px;
+    font-weight: 400;
 }
 
-.p2 {
+.p5 {
     color: white;
+    font-weight: 400;
     font-size: 25px;
 }
 
 .section-bottom {
     height: auto;
     padding: 30px 0;
-    background: linear-gradient(180deg, #3b3b3b, #000000);
+    background: linear-gradient(180deg, #647d5541, #647d55);
 }
 
 .content-bottom {
@@ -308,57 +420,34 @@ h3 {
 
 .VK {
     margin-right: 30px;
+    max-width: 50px;
+    min-width: 30px;
+    height: auto;
 }
 
 .ikon-VK-Inst {
-    box-shadow: inset 0 0 4px 4px white;
-    height: 100px;
-    width: auto;
-    background-color: white;
-
+    height: 100%;
+    width: 100%;
+    opacity: .5;
     transition: .2s linear;
 }
 
 .ikon-VK-Inst:hover {
-    box-shadow: inset 0 0 5px 5px rgb(0, 0, 0);
-    background-color: white;
-}
-
-.ikon-VK:after {
-    transition: opacity .2s linear;
-}
-
-.ikon-VK:hover:after {
-    opacity: 1;
-}
-
-.ikon-Inst {
-    box-shadow: inset 0 0 4px 4px white;
-    height: 100px;
-    width: auto;
-
-    transition: .2s linear;
-}
-
-.ikon-Inst:hover {
-    box-shadow: inset 0 0 5px 5px rgb(0, 0, 0);
-    background-color: white;
-}
-
-.ikon-Inst:after {
-    transition: opacity .2s linear;
-}
-
-.ikon-Inst:hover:after {
     opacity: 1;
 }
 
 .map-space {
     padding: 0 10px;
-    max-width: 400px;
-    min-width: 300px;
+    max-width: 350px;
+    min-width: 250px;
     height: auto;
     position: relative;
+    opacity: .7;
+    transition: .2s linear;
+}
+
+.map-space:hover {
+    opacity: 1;
 }
 
 .map-picture {
@@ -366,16 +455,55 @@ h3 {
     height: 100%;
 }
 
-.map-picture:before {
-    width: 400px;
-    height: auto;
-}
-
-.map-picture:after {
-    width: 300px;
-    height: auto;
-}
 
 .phone_num {
     color: black;
+}
+
+/* About masters */
+
+.text-about-master {
+    letter-spacing: 0.3em;
+    line-height: 30px;
+    max-width: 400px;
+    margin: 0;
+}
+
+.about-master {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+p {
+    color: black;
+}
+
+.p2 {
+    font-size: 23px;
+    font-weight: 600;
+    color: #88B693;
+}
+
+.p3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.p4 {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.ad-photo-master {
+    margin: 0 20px 20px 20px;
+    max-width: 450px;
+    text-align: center;
+}
+
+.master-in {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

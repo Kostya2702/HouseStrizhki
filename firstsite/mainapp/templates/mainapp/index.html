@@ -44,11 +44,30 @@
 
 {% block atmosphere %}
 
-    <h1 class="title-section">Работы</h1>
     <div class="space-work">
         {% for el in add_photo %}
             <div class="ad-photo">
                 <div><img class="photo-works" src='{{ el.photo.url }}'></div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
+
+{% block masters %}
+
+    <div class="about-master">
+        {% for el in masters %}
+            <div class="master-in">
+                <div class="ad-photo-master">
+                    <img class="photo-works" src='{{ el.avatar.url }}'>
+                </div>
+                <div id="master-text" class="text-about-master">
+                    <p class="p2">{{ el.master }}</p>
+                    <p class="p3">{{ el.hairdresser }}</p>
+                    <p class="p4">{{ el.aboutMaster }}</p>
+                </div>
             </div>
         {% endfor %}
     </div>
@@ -75,36 +94,10 @@
 
             {% for el in addresses %}
             <div class="space1">
-                <div class="p2">{{ el.city }}</div>
-                <div class="p2">{{ el.number }}</div>
+                <div class="p5">{{ el.city }}</div>
+                <div class="p5">{{ el.number }}</div>
             </div>
             {% endfor %}
         </div>    
-
-{% endblock %}
-
-
-{% block note %}
-
-<div class="formitem">
-    <form action="{% url 'home' %}">
-        {% csrf_token %}
-            <table>
-                {% for service in prices %}
-                    <div>{{service.as_table}}</div>
-                {% endfor %}
-            </table>   
-        </form>
-    </div>
-
-    <div>
-        <form action="{% url 'home' %}" method="post">
-            {% csrf_token %}
-            <table>
-                {{ notes.media }}
-                {{ notes.as_table }}
-            </table>
-        </form>
-    </div>
 
 {% endblock %}

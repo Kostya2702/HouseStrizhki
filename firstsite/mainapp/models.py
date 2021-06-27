@@ -16,16 +16,12 @@ class Services(models.Model):
         verbose_name_plural = 'Услуги'
 
 
-class ChooceServ(models.Model):
-    choiceServ = models.ForeignKey(Services, on_delete=models.PROTECT, verbose_name='Выбор услуг')
-    choiceMaster = models.ForeignKey('Hairdressers', on_delete=models.PROTECT, verbose_name='Выбор мастера')
-
-
 class Hairdressers(models.Model):
     hairdresser = models.CharField('Фамилия и имя', max_length=200)
     master = models.CharField('Уровень мастерства', max_length=40)
     aboutMaster = models.CharField('Немного о мастере', max_length=255)
     avatar = models.ImageField('Добавить фото', upload_to = 'img/')
+    time_create = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.hairdresser
