@@ -5,8 +5,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: black;
     line-height: 1.5;
-    background: url('Font.png') center no-repeat fixed;
-    background-size: cover;
+    background: url('Font.png') no-repeat fixed;
 }
 
 *, 
@@ -22,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 .title-section {
     margin-bottom: 30px;
     padding-bottom: 10px;
-    border-bottom: #2aa199 2px solid;
+    border-bottom: #FF0D0D 2px solid;
     font-size: 20px;
     font-weight: 600;
 }
@@ -41,57 +40,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Intro */
-
 .intro {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     width: 100%;
     height: 100vh;
-    z-index: 52;
 }
 
-.intro-inner {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
-    margin: 0 auto;
-    margin: 30px 0;
-}
-
-.intro-address {
+.intro-in {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
     width: 100%;
-    top: 0;
-    margin-bottom: 15px;
-}
-
-.intro-log {
-    height: auto;
-    max-width: 550px;
-    width: 100%;
-    padding-top: 20vh;
-}
-
-.img-logoHS {
-    width: 100%;
-    height: 100%;
-}
-
-.intro-bot {
-    padding: 50px 20px 50px 0;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.bot {
-    font-size: 20px;
-    font-weight: 600;
-    color: black;
-    left: 0;
-    
+    max-width: 1050px;
+    padding-top: 85vh;
 }
 
 .address {
@@ -103,13 +62,13 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.address:nth-child(1n + 1) {
-    margin-top: 15px;
+.address:nth-child(2) {
+    margin-right: 0;
 }
 
 .address:before {
     content: '';
-    background-color: #2aa199;
+    background-color: #FF0D0D;
     width: 20%;
     height: 2px;
     display: block;
@@ -139,8 +98,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
     font-size: 20px;
-    font-weight: 600;
     color: black;
+    font-weight: 200;
     text-align: center;
 }
 
@@ -170,20 +129,20 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 3px;
     display: block;
-    background-color: #e7d6c4;
+    background-color: rgb(255, 255, 255);
     opacity: 0;
 
     position: absolute;
     top: 100%;
     left: 0;
-    z-index: 52;
+    z-index: 1;
 
     transition: opacity .2s linear;
 
 }
 
 .nav-link:hover {
-    color: #e7d6c4;
+    color: white;
 }
 
 .nav-link:hover:after {
@@ -193,11 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link-write {
     border: none;
     color: white;
-    background-color: #2aa1999f;
-}
-
-.fa-solid .fa-pencil {
-    font-weight: 900;
+    background-color: #FF0D0D;
 }
 
 .nav-fixed .nav-link-write {
@@ -210,16 +165,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-link-write:hover {
-    background-color: #228676;
+    background-color: #ff0d0d70;
 }
 .all-sections {
-    background: rgba(255, 255, 255, 0.452);
-    width: 100%;
-    max-width: 1000px;
+    background: rgba(255, 255, 255, 0.644);
+    background-position: center;
+    background-attachment: fixed;
+    /* background-size: cover; */
+    width: 1000px;
     height: auto;
     margin: 0 auto;
     padding: 30px 0;
-    z-index: 999;
 }
 
 .marg-top {
@@ -267,6 +223,13 @@ h3 {
 
 /* Atmosphere */
 
+.section-atmosphere {
+    height: auto;
+    padding: 30px 0;
+    background: linear-gradient(45deg, #ecd8cb, #C5DDE8);
+    margin: 10vh auto;
+}
+
 .works-atmo {
     text-align: center;
 }
@@ -305,23 +268,16 @@ h3 {
     display: flex;
     align-items: center;
 }
-button:active, button:focus {
-    outline: none !important;
-  }
-button::-moz-focus-inner {
-    border: 0 !important;
-  }
+
 
 /* Точки (булиты) */
 .slick-dots{
     display: flex;
     padding: 0;
-    outline: none !important;
 }
 .slick-dots li{
     list-style: none;
     margin: 0 10px;
-    outline: none !important;
 }
 
 /* Активная точка */
@@ -329,7 +285,6 @@ button::-moz-focus-inner {
     border: none;
     width: 14px;
     height: 14px;
-    outline: none !important;
 }
 
 /* Элемент точки */
@@ -337,10 +292,9 @@ button::-moz-focus-inner {
     border: none;
     font-size: 0;
     border-radius: 50%;
-    background-color: #2aa199;
+    background-color: white;
     width: 10px;
-    height: 12px;
-    outline: none !important;
+    height: 10px;
 
 }
 
@@ -418,13 +372,13 @@ button::-moz-focus-inner {
 /* Bottom */
 
 .p1 {
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 400;
 }
 
 .p5 {
-    color: black;
+    color: white;
     font-weight: 400;
     font-size: 25px;
 }
@@ -432,8 +386,7 @@ button::-moz-focus-inner {
 .section-bottom {
     height: auto;
     padding: 30px 0;
-    background: rgba(255, 255, 255, 0.452);
-    /* background: repeating-linear-gradient(45deg, #2aa199, #2aa199 20px, #eae2d3 20px, #eae2d3 50px); */
+    background: linear-gradient(180deg, #647d5541, #647d55);
 }
 
 .content-bottom {
@@ -471,8 +424,8 @@ button::-moz-focus-inner {
 .ikon-VK-Inst {
     height: 100%;
     width: 100%;
-    opacity: 0.7;
-    transition: opacity .2s linear;
+    opacity: .5;
+    transition: .2s linear;
 }
 
 .ikon-VK-Inst:hover {
@@ -503,16 +456,6 @@ button::-moz-focus-inner {
     color: black;
 }
 
-.logo-bot {
-    font-size: 20px;
-    font-weight: 600;
-    color: black;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-}
-
 /* About masters */
 
 .text-about-master {
@@ -534,15 +477,18 @@ p {
 }
 
 .p2 {
+    font-size: 23px;
     font-weight: 600;
-    color: #2aa199;
+    color: #88B693;
 }
 
 .p3 {
+    font-size: 30px;
     font-weight: 500;
 }
 
 .p4 {
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -557,7 +503,4 @@ p {
     justify-content: center;
     flex-wrap: wrap;
 }
-
-/* Затемнение */
-
 

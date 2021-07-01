@@ -12,38 +12,35 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'mainapp/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'mainapp/css/slick.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   </head>
 
 <body translate="no">
   
-  <header id="header" class="header">
+  <header class="header">
     <div class="container">
       <div class="header-in">
-        <div class="logo"><img src="{% static 'mainapp/img/logoNew.png' %}" width="80px"> Студия красоты</div>
+        <div class="logo">
+          <img src="{% static 'mainapp/img/logo.svg' %}" alt="Logo" width="60px">Студия красоты
+        </div>
           <nav id="header" class="nav">
+            <a class="nav-link" href="{% url 'home' %}"><li><i class="fas fa-home"></i> Главная</li></a>
             <a class="nav-link" href="#about"><li><i class="far fa-address-card"></i> О нас</li></a>
-            <a class="nav-link" href="#works"><li><i class="fas fa-book-open"></i> Наши работы</li></a>
-            <a id="nav" class="nav-link nav-link-write ms_booking" href="#"><i class="fas fa-calendar"></i> Онлайн запись</a>
+            <a id="nav" class="nav-link nav-link-write ms_booking" href="#"><i class="fas fa-book-open"></i> Онлайн запись</a>
           </nav>
       </div>
     </div>
   </header>
-  
+
   <div class="intro">
     <div class="container">
-      <div class="intro-inner">
-        <div class="intro-log">
-          <img class="img-logoHS" src="{% static 'mainapp/img/House_logo.png' %}">
-        </div>
-        <div class="intro-bot"><h2 class="bot">... уютнее чем дома</h2></div>
-        {% block intro %}{% endblock %}
-      </div>
+      {% block intro %}{% endblock %}
+      <div class="intro-log"><img src="{% static 'mainapp/img/House_logo.png' %}" width="200px"></div>
     </div>
   </div>
 
-  <section id="about" class="all-sections">
+  <section id="about" class="all-sections marg-top">
     <div class="container">
       <div class="about-us">
         {% block about %}{% endblock %}
@@ -59,7 +56,7 @@
     </div>
   </section>
 
-  <section id="works" class="all-sections">
+  <section class="all-sections">
     <div class="container">
       <div class="works-atmo">
         <h1 class="title-section">Работы</h1>
@@ -90,6 +87,7 @@
   <script src="{% static 'mainapp/js/header.js' %}"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="//w537800.yclients.com/widgetJS" charset="UTF-8"></script>
+  </script>
   <script src="{% static 'mainapp/js/slick.min.js' %}"></script>
   <script src="{% static 'mainapp/js/flowtype.js' %}"></script>
 
